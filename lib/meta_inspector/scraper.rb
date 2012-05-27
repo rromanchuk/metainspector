@@ -100,6 +100,9 @@ module MetaInspector
         @scraped = false
       rescue TimeoutError
         warn 'Timeout!!!'
+      rescue HTTPError => e
+        warn 'An http exception occurred.'
+        raise e
       rescue Exception => e
         warn 'An exception occurred while trying to fetch the page!'
         warn e.message
