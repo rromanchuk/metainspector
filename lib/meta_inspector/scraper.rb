@@ -2,7 +2,6 @@
 
 require 'open-uri'
 require 'nokogiri'
-require 'charguess'
 require 'hashie/rash'
 
 # MetaInspector provides an easy way to scrape web pages and get its elements
@@ -71,7 +70,7 @@ module MetaInspector
     # TODO: We should trust the charset expressed on the Content-Type meta tag
     # and only guess it if none given
     def charset
-      @data.charset ||= CharGuess.guess(document).downcase
+      #@data.charset ||= CharGuess.guess(document).downcase
     end
 
     # Returns all parsed data as a nested Hash
